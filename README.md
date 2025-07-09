@@ -1,4 +1,4 @@
-# BitAura MCP Platform
+# VANIJ MCP Platform
 
 ## 🚀 [MCP Integration Demo Video. (watch here)](https://drive.google.com/file/d/14JvBERtsT1ed1Db5GCDLllqdW5BL684S/view?usp=sharing)
 
