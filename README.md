@@ -186,6 +186,7 @@ mcp_servers/python/clients/src/client_and_server_config.py
 | **OMNISEARCH**    | Unified search across multiple sources    | ✅ Active |
 | **PINTEREST**     | Pinterest API integration                | ✅ Active |
 | **WAYBACK**       | Wayback Machine archive search            | ✅ Active |
+| **BIGGO**         | Eommerece Assitant                       | ✅ Active |
 
 ### Python Implementation
 

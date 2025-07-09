@@ -50,3 +50,6 @@ Thumbs.db
 
 ./mcp_servers/python/clients/venv
 __pycache__
+branch_structure.json
+temp_auto_push.bat
+temp_interactive_push.bat
