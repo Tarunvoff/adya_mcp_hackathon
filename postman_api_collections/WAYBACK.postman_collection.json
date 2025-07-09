@@ -1,0 +1,93 @@
+{
+  "info": {
+    "_postman_id": "wayback-mcp-2025",
+    "name": "WAYBACK-MCP",
+    "description": "Testing collection for WAYBACK MCP Server with all real tools, using the required payload structure.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "wayback-2025"
+  },
+  "item": [
+    {
+      "name": "Wayback Tools",
+      "item": [
+        {
+          "name": "Get Wayback Snapshots",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{wayback-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"get-wayback-snapshots\\\", \\\"url\\\": \\\"https://example.com\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Fetch available snapshots from the Wayback Machine for a given URL.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{wayback-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Fetch available snapshots from the Wayback Machine for a given URL."
+          }
+        },
+        {
+          "name": "Search Wayback History",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{wayback-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search-wayback-history\\\", \\\"url\\\": \\\"https://example.com\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search the complete history of snapshots for a URL in the Wayback Machine.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{wayback-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search the complete history of snapshots for a URL in the Wayback Machine."
+          }
+        },
+        {
+          "name": "Save Page Now",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{wayback-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"save-page-now\\\", \\\"url\\\": \\\"https://example.com\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Save the current version of a page to the Wayback Machine.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{wayback-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Save the current version of a page to the Wayback Machine."
+          }
+        },
+        {
+          "name": "Get Wayback Stats",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{wayback-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"get-wayback-stats\\\", \\\"url\\\": \\\"https://example.com\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Get statistics about how many times a URL has been archived.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{wayback-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Get statistics about how many times a URL has been archived."
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "dev-js-host", "value": "http://localhost:5000", "type": "string" },
+    { "key": "wayback-server", "value": "WAYBACK", "type": "string" },
+    { "key": "gemini-api-key", "value": "", "type": "secret" }
+  ]
+} 

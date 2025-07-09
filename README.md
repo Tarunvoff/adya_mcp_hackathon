@@ -1,4 +1,4 @@
-# Vanij MCP Platform
+# BitAura MCP Platform
 
 ## 🚀 [MCP Integration Demo Video. (watch here)](https://drive.google.com/file/d/14JvBERtsT1ed1Db5GCDLllqdW5BL684S/view?usp=sharing)
 
@@ -179,16 +179,13 @@ mcp_servers/python/clients/src/client_and_server_config.py
 
 ### JavaScript Implementation
 
-| Server | Description | Status |
-|--------|-------------|--------|
-| **WordPress** | Content management and blog operations | ✅ Active |
-| **Zoom** | Video conferencing and meeting management | ✅ Active |
-| **Salesforce** | CRM and sales automation | ✅ Active |
-| **Slack** | Team communication and collaboration | ✅ Active |
-| **Jira** | Project management and issue tracking | ✅ Active |
-| **Google Drive** | Cloud storage and file management | ✅ Active |
-| **Zendesk** | Customer support and ticketing | ✅ Active |
-| **HubSpot** | Marketing and CRM platform | ✅ Active |
+| Server         | Description                                 | Status    |
+|---------------|---------------------------------------------|-----------|
+| **CODE-RESEARCH** | Developer resources and code search       | ✅ Active |
+| **WORDPRESS**     | WordPress content management              | ✅ Active |
+| **OMNISEARCH**    | Unified search across multiple sources    | ✅ Active |
+| **PINTEREST**     | Pinterest API integration                | ✅ Active |
+| **WAYBACK**       | Wayback Machine archive search            | ✅ Active |
 
 ### Python Implementation
 
@@ -301,4 +298,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Built with ❤️ by the Vanij Team**
+**Built with ❤️ by the BitAura Team**

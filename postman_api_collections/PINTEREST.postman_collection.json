@@ -1,0 +1,176 @@
+{
+  "info": {
+    "_postman_id": "pinterest-mcp-2025",
+    "name": "PINTEREST-MCP",
+    "description": "Testing collection for PINTEREST MCP Server with all real tools, using the required payload structure.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "pinterest-2025"
+  },
+  "item": [
+    {
+      "name": "Boards",
+      "item": [
+        {
+          "name": "Get Boards",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{pinterest-server}}\": {\n      \"PINTEREST_ACCESS_TOKEN\": \"{{pinterest-access-token}}\"\n    }\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"get-boards\\\", \\\"accessToken\\\": \\\"{{pinterest-access-token}}\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Fetch all Pinterest boards for the authenticated user.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{pinterest-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Fetch all Pinterest boards for the authenticated user."
+          }
+        },
+        {
+          "name": "Create Board",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{pinterest-server}}\": {\n      \"PINTEREST_ACCESS_TOKEN\": \"{{pinterest-access-token}}\"\n    }\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"create-board\\\", \\\"accessToken\\\": \\\"{{pinterest-access-token}}\\\", \\\"name\\\": \\\"Sample Board\\\", \\\"description\\\": \\\"A board for testing\\\", \\\"privacy\\\": \\\"PUBLIC\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Create a new Pinterest board.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{pinterest-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Create a new Pinterest board."
+          }
+        },
+        {
+          "name": "Delete Board",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{pinterest-server}}\": {\n      \"PINTEREST_ACCESS_TOKEN\": \"{{pinterest-access-token}}\"\n    }\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"delete-board\\\", \\\"accessToken\\\": \\\"{{pinterest-access-token}}\\\", \\\"boardId\\\": \\\"<BOARD_ID>\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Delete a Pinterest board by ID.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{pinterest-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Delete a Pinterest board by ID."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pins",
+      "item": [
+        {
+          "name": "Create Pin (Base64)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{pinterest-server}}\": {\n      \"PINTEREST_ACCESS_TOKEN\": \"{{pinterest-access-token}}\"\n    }\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"create-pin\\\", \\\"accessToken\\\": \\\"{{pinterest-access-token}}\\\", \\\"boardId\\\": \\\"<BOARD_ID>\\\", \\\"title\\\": \\\"Sample Pin\\\", \\\"image_data\\\": \\\"<BASE64_IMAGE>\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Create a new pin on a board using base64 image.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{pinterest-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Create a new pin on a board using base64 image."
+          }
+        },
+        {
+          "name": "Create Pin (Image URL)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{pinterest-server}}\": {\n      \"PINTEREST_ACCESS_TOKEN\": \"{{pinterest-access-token}}\"\n    }\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"create-pin-url\\\", \\\"accessToken\\\": \\\"{{pinterest-access-token}}\\\", \\\"boardId\\\": \\\"<BOARD_ID>\\\", \\\"title\\\": \\\"Sample Pin\\\", \\\"media_url\\\": \\\"<IMAGE_URL>\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Create a new pin on a board using an image URL.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{pinterest-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Create a new pin on a board using an image URL."
+          }
+        },
+        {
+          "name": "Delete Pin",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{pinterest-server}}\": {\n      \"PINTEREST_ACCESS_TOKEN\": \"{{pinterest-access-token}}\"\n    }\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"delete-pin\\\", \\\"accessToken\\\": \\\"{{pinterest-access-token}}\\\", \\\"pinId\\\": \\\"<PIN_ID>\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Delete a pin by ID.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{pinterest-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Delete a pin by ID."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sandbox",
+      "item": [
+        {
+          "name": "Create Sandbox Board",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{pinterest-server}}\": {\n      \"PINTEREST_ACCESS_TOKEN\": \"{{pinterest-access-token}}\"\n    }\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"create-sandbox-board\\\", \\\"accessToken\\\": \\\"{{pinterest-access-token}}\\\", \\\"name\\\": \\\"Sandbox Board\\\", \\\"description\\\": \\\"A sandbox board\\\", \\\"privacy\\\": \\\"PUBLIC\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Create a new board in the Pinterest Sandbox.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{pinterest-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Create a new board in the Pinterest Sandbox."
+          }
+        },
+        {
+          "name": "Get Sandbox Boards",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{pinterest-server}}\": {\n      \"PINTEREST_ACCESS_TOKEN\": \"{{pinterest-access-token}}\"\n    }\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"get-sandbox-boards\\\", \\\"accessToken\\\": \\\"{{pinterest-access-token}}\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Fetch boards from the Pinterest Sandbox.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{pinterest-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Fetch boards from the Pinterest Sandbox."
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "dev-js-host", "value": "http://localhost:5000", "type": "string" },
+    { "key": "pinterest-server", "value": "PINTEREST", "type": "string" },
+    { "key": "pinterest-access-token", "value": "", "type": "secret" },
+    { "key": "gemini-api-key", "value": "", "type": "secret" }
+  ]
+} 

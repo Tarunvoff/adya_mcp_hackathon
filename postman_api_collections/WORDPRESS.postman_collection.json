@@ -1,0 +1,106 @@
+{
+  "info": {
+    "_postman_id": "wordpress-mcp-2025",
+    "name": "WORDPRESS-MCP",
+    "description": "Testing collection for WORDPRESS MCP Server with post, comment, and user tools.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "wordpress-2025"
+  },
+  "item": [
+    {
+      "name": "📝 Post & Content Tools",
+      "item": [
+        {
+          "name": "1. Create New Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"selected_server_credentials\": {\n        \"{{wordpress-server}}\": {\n            \"WORDPRESS_API_TOKEN\": \"{{wordpress-api-token}}\"\n        }\n    },\n    \"client_details\": {\n        \"input\": \"Create a new blog post titled 'AI Trends 2025' with content about the latest advancements in AI.\",\n        \"input_type\": \"text\",\n        \"prompt\": \"You are a WordPress assistant. Create a new post with the given title and content.\",\n        \"chat_model\": \"gemini-2.0-flash-lite\",\n        \"chat_history\": []\n    },\n    \"selected_client\": \"MCP_CLIENT_GEMINI\",\n    \"selected_servers\": [\n        \"{{wordpress-server}}\"\n    ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Test creating a new WordPress post"
+          }
+        },
+        {
+          "name": "2. Search Posts by Keyword",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"selected_server_credentials\": {\n        \"{{wordpress-server}}\": {\n            \"WORDPRESS_API_TOKEN\": \"{{wordpress-api-token}}\"\n        }\n    },\n    \"client_details\": {\n        \"input\": \"Search for posts about machine learning\",\n        \"input_type\": \"text\",\n        \"prompt\": \"You are a WordPress assistant. Search for posts by keyword.\",\n        \"chat_model\": \"gemini-2.0-flash-lite\",\n        \"chat_history\": []\n    },\n    \"selected_client\": \"MCP_CLIENT_GEMINI\",\n    \"selected_servers\": [\n        \"{{wordpress-server}}\"\n    ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Test searching for WordPress posts by keyword"
+          }
+        }
+      ]
+    },
+    {
+      "name": "💬 Comment & User Tools",
+      "item": [
+        {
+          "name": "3. Add Comment to Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"selected_server_credentials\": {\n        \"{{wordpress-server}}\": {\n            \"WORDPRESS_API_TOKEN\": \"{{wordpress-api-token}}\"\n        }\n    },\n    \"client_details\": {\n        \"input\": \"Add a comment 'Great article!' to the post titled 'AI Trends 2025'\",\n        \"input_type\": \"text\",\n        \"prompt\": \"You are a WordPress assistant. Add a comment to the specified post.\",\n        \"chat_model\": \"gemini-2.0-flash-lite\",\n        \"chat_history\": []\n    },\n    \"selected_client\": \"MCP_CLIENT_GEMINI\",\n    \"selected_servers\": [\n        \"{{wordpress-server}}\"\n    ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Test adding a comment to a WordPress post"
+          }
+        },
+        {
+          "name": "4. Get User Info",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"selected_server_credentials\": {\n        \"{{wordpress-server}}\": {\n            \"WORDPRESS_API_TOKEN\": \"{{wordpress-api-token}}\"\n        }\n    },\n    \"client_details\": {\n        \"input\": \"Get user info for 'admin'\",\n        \"input_type\": \"text\",\n        \"prompt\": \"You are a WordPress assistant. Retrieve user information.\",\n        \"chat_model\": \"gemini-2.0-flash-lite\",\n        \"chat_history\": []\n    },\n    \"selected_client\": \"MCP_CLIENT_GEMINI\",\n    \"selected_servers\": [\n        \"{{wordpress-server}}\"\n    ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Test retrieving WordPress user info"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "dev-js-host", "value": "http://localhost:5000", "type": "string" },
+    { "key": "wordpress-server", "value": "WORDPRESS", "type": "string" },
+    { "key": "wordpress-api-token", "value": "", "type": "secret" }
+  ]
+} 

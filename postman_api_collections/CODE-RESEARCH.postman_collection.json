@@ -1,0 +1,255 @@
+{
+  "info": {
+    "_postman_id": "code-research-mcp-2025",
+    "name": "CODE-RESEARCH-MCP",
+    "description": "Testing collection for CODE-RESEARCH MCP Server with all real tools, using the required payload structure.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "code-research-2025"
+  },
+  "item": [
+    {
+      "name": "Code Research Tools",
+      "item": [
+        {
+          "name": "Search YouTube Tutorials",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_youtube_tutorials\\\", \\\"query\\\": \\\"Python async tutorial\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search YouTube for Python async tutorials.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search YouTube for Python async tutorials."
+          }
+        },
+        {
+          "name": "Search Tech Blogs",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_tech_blogs\\\", \\\"query\\\": \\\"React best practices\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search tech blogs for React best practices.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search tech blogs for React best practices."
+          }
+        },
+        {
+          "name": "Search Stack Overflow",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_stackoverflow\\\", \\\"query\\\": \\\"TypeError: undefined is not a function\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search Stack Overflow for JavaScript error solutions.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search Stack Overflow for JavaScript error solutions."
+          }
+        },
+        {
+          "name": "Search Reddit Programming",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_reddit_programming\\\", \\\"query\\\": \\\"Best Python libraries for data science\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search Reddit programming for best Python libraries for data science.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search Reddit programming for best Python libraries for data science."
+          }
+        },
+        {
+          "name": "Search Rust Crates",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_rust_crates\\\", \\\"query\\\": \\\"async runtime\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search Rust crates for async runtime libraries.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search Rust crates for async runtime libraries."
+          }
+        },
+        {
+          "name": "Search PyPI",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_pypi\\\", \\\"query\\\": \\\"machine learning\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search PyPI for machine learning packages.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search PyPI for machine learning packages."
+          }
+        },
+        {
+          "name": "Search npm",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_npm\\\", \\\"query\\\": \\\"express middleware\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search npm for express middleware packages.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search npm for express middleware packages."
+          }
+        },
+        {
+          "name": "Search MDN",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_mdn\\\", \\\"query\\\": \\\"Array.prototype.map\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search MDN for Array.prototype.map documentation.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search MDN for Array.prototype.map documentation."
+          }
+        },
+        {
+          "name": "Search Go Packages",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_go_packages\\\", \\\"query\\\": \\\"web framework\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search Go packages for web frameworks.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search Go packages for web frameworks."
+          }
+        },
+        {
+          "name": "Search GitHub",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_github\\\", \\\"query\\\": \\\"async await\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search GitHub for async await code examples.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search GitHub for async await code examples."
+          }
+        },
+        {
+          "name": "Search DevDocs",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_devdocs\\\", \\\"query\\\": \\\"pandas DataFrame merge\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search DevDocs for pandas DataFrame merge documentation.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search DevDocs for pandas DataFrame merge documentation."
+          }
+        },
+        {
+          "name": "Search Awesome Lists",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_awesome_lists\\\", \\\"query\\\": \\\"machine learning\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search Awesome Lists for machine learning resources.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search Awesome Lists for machine learning resources."
+          }
+        },
+        {
+          "name": "Search All (Aggregated)",
+          "request": {
+            "method": "POST",
+            "header": [ { "key": "Content-Type", "value": "application/json" } ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"selected_server_credentials\": {\n    \"{{code-research-server}}\": {}\n  },\n  \"client_details\": {\n    \"api_key\": \"{{gemini-api-key}}\",\n    \"temperature\": 0.1,\n    \"max_token\": 20000,\n    \"input\": \"{\\\"tool_name\\\": \\\"search_all\\\", \\\"query\\\": \\\"python machine learning tutorial\\\"}\",\n    \"input_type\": \"json\",\n    \"prompt\": \"Search all sources for python machine learning tutorial.\",\n    \"chat_model\": \"gemini-2.0-flash-lite\",\n    \"chat_history\": []\n  },\n  \"selected_client\": \"MCP_CLIENT_GEMINI\",\n  \"selected_servers\": [\n    \"{{code-research-server}}\"\n  ]\n}",
+              "options": { "raw": { "language": "json" } }
+            },
+            "url": {
+              "raw": "{{dev-js-host}}/api/v1/mcp/process_message",
+              "host": ["{{dev-js-host}}"],
+              "path": ["api", "v1", "mcp", "process_message"]
+            },
+            "description": "Search all sources for python machine learning tutorial."
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    { "key": "dev-js-host", "value": "http://localhost:5000", "type": "string" },
+    { "key": "code-research-server", "value": "CODE-RESEARCH", "type": "string" },
+    { "key": "gemini-api-key", "value": "", "type": "secret" }
+  ]
+} 
